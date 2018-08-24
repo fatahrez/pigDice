@@ -1,2 +1,2 @@
-var rollRandom = Math.floor(Math.random() * 6);
-alert(rollRandom);
+var rollRandom = Math.floor(Math.random() * 6) + 1;
+return rollRandom;
