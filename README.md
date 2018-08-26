@@ -1,17 +1,18 @@
-# Project Title
+# Pig Dice Game
 
-One Paragraph of project description goes here
+This is a game which allows to people to play a dice game.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+You need a text editor if you wish to edit this project. There is already a cdn link for bootstrap and jquery. if you dont prefer cdn link you can download the offline version from bootsrap website. You also need a browser to run the code (preferably chrome).  
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
+Text Editor
 ```
-Give examples
+Atom
+Sublime text
+Visual Studio Code
 ```
 
 ### Installing
