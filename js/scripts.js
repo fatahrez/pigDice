@@ -4,9 +4,9 @@
   var player1 = "";
   var player2 = "";
 
-//Roll dice with random number
+//Roll dice with random number from 1-6
   var rollRandom = function() {
-    return Math.floor(Math.random() * 6) + 1;
+    return Math.floor(6*Math.random()) + 1;
   }
 
   //create constructor method for players
@@ -95,25 +95,25 @@ $(document).ready(function(){
 
   //when player2 rolls
   $("button#rollPlayer2").click(function(event){
-    player1.roll = rollRandom();
+    player2.roll = rollRandom();
     $("#dice-roll-2").text(player2.roll);
-    player1.scoreone();
+    player2.scoreone();
     $("#round-total-2").text(player2.currentScore);
   });
 
   //when player1 press hold button
-  $("button#player1-hold").click(function(event){
+  $("button#holdPlayer1").click(function(event){
     player1.hold();
-    $("#total-score-1").text(player1.totalscore);
+    $("#total-score-1").text(player1.score);
     $("#round-total-1").empty();
     $("#dice-roll-1").empty();
     player1.crownWinner();
   });
 
   //when player2 holds
-  $("button#player2-hold").click(function(event){
+  $("button#holdPlayer2").click(function(event){
     player2.hold();
-    $("#total-score-2").text(player2.totalscore);
+    $("#total-score-2").text(player2.score);
     $("#round-total-2").empty();
     $("#dice-roll-2").empty();
     player2.crownWinner();
