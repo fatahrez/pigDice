@@ -12,30 +12,40 @@
     <title>Pig Dice Game</title>
   </head>
   <body>
-    <div class="container">
-      <div class="playerNames">
+    <div class="start-game container">
+      <div class="jumbotron">
         <h1>Pig Dice Game</h1>
         <form id="player1">
           <label for="player1name">Player1 name</label>
-          <input type="text">
+          <input required class="player1Name form-control" type="text">
         </form><br>
         <form id="player2">
           <label for="player2name">Player2 name</label>
-          <input type="text">
+          <input required class="player2Name form-control" type="text">
         </form>
-        <button type="button" name="button" id="playGame">Play</button>
+        <button id="playGame" class="btn-info btn">Play</button>
     </div><br>
+  </div>
+
+    <div class="player-space container">
+      <button id="new-game" class="btn-success btn">NEW GAME</button>
       <div class="row">
         <div class="col-md-6">
           <h1>Player 1</h1>
-          <button id="rollPlayer1">Roll</button>
-          <button id="holdPlayer1">Hold</button>
-          <h2 id="output"> </h2>
+          <button id="rollPlayer1" class="btn-success btn">Roll</button>
+          <button id="holdPlayer1" class="btn-success btn">Hold</button>
+          <h2>Dice Roll: <span id="die-roll-1"></span></h2>
+          <p>Current Score: <span id="round-total-1"></span></p>
+          <p>Total Score: <span id="total-score-1"></span></p>
         </div>
+
         <div class="col-md-6">
           <h1>Player 2</h1>
-          <button type="button" name="button" id="rollPlayer2">Roll</button>
-          <button type="button" name="button" id="holdPlayer2">Hold</button>
+          <button id="rollPlayer2" class="btn-success btn">Roll</button>
+          <button id="holdPlayer2" class="btn-success btn">Hold</button>
+          <h2>Dice Roll: <span id="die-roll-2"></span></h2>
+          <p>Current Score: <span id="round-total-2"></span></p>
+          <p>Total Score: <span id="total-score-2"></span></p>
 
         </div>
       </div>

@@ -6,15 +6,15 @@
 
 //Roll dice with random number
   var rollRandom = function() {
-    Math.floor(Math.random() * 6) + 1;
+    return Math.floor(Math.random() * 6) + 1;
   }
 
   //create constructor method for players
-  function Player (throw){
+  function Player (turn){
     this.roll = 0;
     this.currentScore = 0;
     this.score= 0;
-    this.throw = throw;
+    this.throw = turn;
     this.playerName;
   }
 
@@ -52,6 +52,7 @@ var clearValues = function(){
   $(".player1Name").val("");
   $(".player2Name").val("");
 }
+
 //frontEnd logic
 $(document).ready(function(){
   //starts game by showing the rolling space and creating two players
@@ -66,6 +67,22 @@ $(document).ready(function(){
 
     var player2Name = $(".player2name").val();
     $("#player2Name").text(player2Name);
+  });
+
+  //when player press new game button
+  $("button#new-game").click(function(event){
+    $(".player-space").hide();
+    clearValues();
+    player1.newGame();
+    player2.newGame();
+    $("#round-total-1").empty();
+    $("#total-score-1").empty();
+    $("die-roll-1").empty();
+    $("#round-total-2").empty();
+    $("#total-score-2").empty();
+    $("#die-roll-2").empty();
+
+    $(".start-game").show();
   });
 
   //Makes player 1 to roll the dice
@@ -84,5 +101,22 @@ $(document).ready(function(){
     $("#round-total-2").text(player2.currentScore);
   });
 
-  //when play
+  //when player1 press hold button
+  $("button#player1-hold").click(function(event){
+    player1.hold();
+    $("#total-score-1").text(player1.totalscore);
+    $("#round-total-1").empty();
+    $("#dice-roll-1").empty();
+    player1.crownWinner();
+  });
+
+  //when player2 holds
+  $("button#player2-hold").click(function(event){
+    player2.hold();
+    $("#total-score-2").text(player2.totalscore);
+    $("#round-total-2").empty();
+    $("#dice-roll-2").empty();
+    player2.crownWinner();
+  });
+
 });
