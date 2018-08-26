@@ -14,7 +14,7 @@
     this.roll = 0;
     this.currentScore = 0;
     this.score= 0;
-    this.throw = turn;
+    this.turn = turn;
     this.playerName;
   }
 
@@ -22,7 +22,7 @@
 Player.prototype.scoreone = function () {
   if (this.roll === 1) {
     this.currentScore = 0;
-    alert("You scored nothing." + this.playerName +"Your turn is over pass the dice");
+    alert("You scored a 1 " + this.playerName +"Your turn is over pass the dice");
   } else {
     this.currentScore += this.roll;
   }
@@ -32,7 +32,7 @@ Player.prototype.scoreone = function () {
 Player.prototype.hold = function () {
   this.score += this.currentScore;
   this.currentScore = 0;
-  alert(this.playerName + ", your turn is over pass the game");
+  alert(this.playerName + ", your turn is over pass the dice");
 }
 
 //crown the winner if someone reaches 100
@@ -65,8 +65,11 @@ $(document).ready(function(){
     var player1Name = $(".player1Name").val();
     $("#player1Name").text(player1Name);
 
-    var player2Name = $(".player2name").val();
+    var player2Name = $(".player2Name").val();
     $("#player2Name").text(player2Name);
+
+    player1.playerName = player1Name;
+    player2.playerName = player2Name;
   });
 
   //when player press new game button
