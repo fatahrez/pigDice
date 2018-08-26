@@ -55,7 +55,7 @@ var clearValues = function(){
 //frontEnd logic
 $(document).ready(function(){
   //starts game by showing the rolling space and creating two players
-  $("button#playGame").click(function(){
+  $("button#playGame").click(function(event){
     player1 = new Player(true);
     player2 = new Player(false);
     $(".player-space").show();
@@ -69,7 +69,20 @@ $(document).ready(function(){
   });
 
   //Makes player 1 to roll the dice
-  $("button#rollPlayer1").click(function(){
-    $("#output").text(rollRandom);
-  })
+  $("button#rollPlayer1").click(function(event){
+    player1.roll = rollRandom();
+    $("#dice-roll-1").text(player1.roll);
+    player1.scoreone();
+    $("#round-total-1").text(player1.currentScore);
+  });
+
+  //when player2 rolls
+  $("button#rollPlayer2").click(function(event){
+    player1.roll = rollRandom();
+    $("#dice-roll-2").text(player2.roll);
+    player1.scoreone();
+    $("#round-total-2").text(player2.currentScore);
+  });
+
+  //when play
 });
