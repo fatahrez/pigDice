@@ -56,7 +56,7 @@ var playerRoll = function(player) {
   var roll = randomDie;
   if(roll === 1){
     player.turnScore = 0;
-    switchPlayer();
+    changePlayer();
   } else {
     player.turnScore += roll;
   }
@@ -64,9 +64,17 @@ var playerRoll = function(player) {
   return roll;
 }
 
+var playerToHold = function() {
+  if (player1.isActive === true) {
+    playerHold(player1);
+  } else {
+    playerHold(player2);
+  }
+
+
 var playerHold = function(player) {
   player.gameScore += player.turnScore;
-  switchPlayer();
+  changePlayer();
 }
 
 var checkForEndOfGame = function() {
@@ -96,14 +104,14 @@ var stylePanels = function() {
 $(document).ready(function() {
 
 
-  initializeGame();
+  startGame();
   stylePanels();
 
   $("button#roll").click(function(event) {
     $(".dice").html('<img src=img/die'+ randomDie +'.png>');
-    whichPlayerRoll();
+    playerToRoll();
     stylePanels();
-    var roundScore = roundScore + randomNumber();
+    var roundScore = roundScore + randomRoll();
     $("#player1Tscore").text(player1.turnScore);
     $("#player1Gscore").text(player1.gameScore);
     $("#player2Tscore").text(player2.turnScore);
@@ -113,7 +121,7 @@ $(document).ready(function() {
 
   $("button#hold").click(function(event) {
     event.preventDefault();
-    whichPlayerHold();
+    playerToHold();
     stylePanels();
   })
 })
