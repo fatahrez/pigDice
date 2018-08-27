@@ -35,11 +35,31 @@ Player.prototype.hold = function () {
   alert(this.playerName + " , your turn is over pass the dice");
 }
 
+var switchPlayer = function() {
+  if (player1.isActive === true) {
+    player1.isActive = false;
+    player2.isActive = true;
+    turnScoreReset();
+  } else {
+    player2.isActive = false;
+    player1.isActive = true;
+    turnScoreReset();
+  }
+}
+
+var playerToRoll = function() {
+  if (player1.isActive === true) {
+    playerRoll(player1);
+  } else {
+    playerRoll(player2);
+  }
+}
+
 //crown the winner if someone reaches 100
 Player.prototype.crownWinner = function (){
-  if (this.score >= 100){
-    alert(this.playerName + " Congratulations, You have won")
-  }
+   if (this.score >= 100){
+     alert(this.playerName + " Congratulations, You have won")
+   }
 }
 
 Player.prototype.newGame = function () {
