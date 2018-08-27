@@ -63,3 +63,57 @@ var playerRoll = function(player) {
   checkForEndOfGame();
   return roll;
 }
+
+var playerHold = function(player) {
+  player.gameScore += player.turnScore;
+  switchPlayer();
+}
+
+var checkForEndOfGame = function() {
+  if (player1.gameScore >= 100 || player2.gameScore >= 100) {
+    if (player1.gameScore > player2. gameScore) {
+      alert("End of game! Player 1 won!");
+    } else if (player1.gameScore < player2. gameScore) {
+      alert("End of game! Player 2 won!");
+    } else {
+      alert("End of game! Tie!");
+    }
+  }
+}
+
+var stylePanels = function() {
+  if (player1.isActive === true) {
+    $("#player2panel").removeClass("activeUser");
+    $("#player1panel").addClass("activeUser");
+  } else {
+    $("#player1panel").removeClass("activeUser");
+    $("#player2panel").addClass("activeUser");
+  }
+}
+
+
+//user-interface
+$(document).ready(function() {
+
+
+  initializeGame();
+  stylePanels();
+
+  $("button#roll").click(function(event) {
+    $(".dice").html('<img src=img/die'+ randomDie +'.png>');
+    whichPlayerRoll();
+    stylePanels();
+    var roundScore = roundScore + randomNumber();
+    $("#player1Tscore").text(player1.turnScore);
+    $("#player1Gscore").text(player1.gameScore);
+    $("#player2Tscore").text(player2.turnScore);
+    $("#player2Gscore").text(player2.gameScore);
+    event.preventDefault();
+  })
+
+  $("button#hold").click(function(event) {
+    event.preventDefault();
+    whichPlayerHold();
+    stylePanels();
+  })
+})
