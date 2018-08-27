@@ -70,7 +70,7 @@ var playerToHold = function() {
   } else {
     playerHold(player2);
   }
-
+}
 
 var playerHold = function(player) {
   player.gameScore += player.turnScore;
