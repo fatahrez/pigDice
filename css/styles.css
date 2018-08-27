@@ -1,3 +1,16 @@
+body{
+background-image: url(../images/download.png);
+height: 700px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.well{
+  background-color: grey;
+}
 .player-space{
   display: none;
+}
+.btn-danger btn{
+  position: absolute;
 }

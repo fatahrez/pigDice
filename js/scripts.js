@@ -22,7 +22,7 @@
 Player.prototype.scoreone = function () {
   if (this.roll === 1) {
     this.currentScore = 0;
-    alert("You scored a 1 " + this.playerName +"Your turn is over pass the dice");
+    alert("You scored a 1 " + this.playerName +" Your turn is over pass the dice");
   } else {
     this.currentScore += this.roll;
   }
@@ -32,13 +32,13 @@ Player.prototype.scoreone = function () {
 Player.prototype.hold = function () {
   this.score += this.currentScore;
   this.currentScore = 0;
-  alert(this.playerName + ", your turn is over pass the dice");
+  alert(this.playerName + " , your turn is over pass the dice");
 }
 
 //crown the winner if someone reaches 100
 Player.prototype.crownWinner = function (){
   if (this.score >= 100){
-    alert(this.playerName + "Congratulations, You have won")
+    alert(this.playerName + " Congratulations, You have won")
   }
 }
 
