@@ -14,7 +14,7 @@
   <body>
     <div class="start-game container">
       <div class="jumbotron">
-        <h1>PIG DICE: THE BEST GAME</h1>
+        <h1>PIG DICE</h1>
       </div>
 
       <div class="dice">
@@ -45,32 +45,14 @@
               </div>
             </div>
           </div>
+          <button class="btn-lg" id="roll">Click to Roll</button>
+          <button class="btn-lg" id="hold">Click to Hold</button>
+          <br><br>
+          <button type="button" class="btn-lg" onclick="location.reload()">New Game</button>
+          <h3><ul id="rolledNumber">
+          </ul></h3>
 
-    <div class="player-space container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="well well-lg">
-                <h2>Player 1: <span id = "player1Name"><span></h2>
-                <button id="rollPlayer1" class="btn-success btn">Roll</button>
-                <button id="holdPlayer1" class="btn-success btn">Hold</button>
-                <h2>Dice Roll: <span id="die-roll-1"></span></h2>
-                <p>Current Score: <span id="round-total-1"></span></p>
-                <p>Total Score: <span id="total-score-1"></span></p>
-              </div>
-            </div>
-
-          <div class="col-md-6">
-            <div class="well well-lg">
-            <h2>Player 2: <span id = "player2Name"><span></h2>
-            <button id="rollPlayer2" class="btn-success btn">Roll</button>
-            <button id="holdPlayer2" class="btn-success btn">Hold</button>
-            <h2>Dice Roll: <span id="die-roll-2"></span></h2>
-            <p>Current Score: <span id="round-total-2"></span></p>
-            <p>Total Score: <span id="total-score-2"></span></p>
-            </div>
-          </div>
-        </div>
-        <button id="new-game" class="btn-danger btn">NEW GAME</button>
       </div>
+    </div>
   </body>
 </html>
