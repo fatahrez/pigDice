@@ -13,10 +13,16 @@ function Player() {
   this.isActive = isActive;
 }
 
-var randomDie = randomNumber();
+var randomDie = randomRoll();
 
-function randomNumber() {
+function randomRoll() {
     randomDie = Math.floor(6*Math.random())+1;
 
     return randomDie;
 };
+
+var startGame = function() {
+  player1 = new Player();
+  player2 = new Player();
+  player1.isActive = true;
+}
