@@ -14,18 +14,37 @@
   <body>
     <div class="start-game container">
       <div class="jumbotron">
-        <h1>Pig Dice Game</h1>
-        <form id="player1">
-          <label for="player1name">Player1 name</label>
-          <input required class="player1Name form-control" type="text">
-        </form><br>
-        <form id="player2">
-          <label for="player2name">Player2 name</label>
-          <input required class="player2Name form-control" type="text">
-        </form>
-        <button id="playGame" class="btn-info btn">Play</button>
-    </div><br>
-  </div>
+        <h1>PIG DICE: THE BEST GAME</h1>
+      </div>
+
+      <div class="dice">
+        <img src="img/die0.png"></img>
+      </div>
+
+      <div class="well">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel">
+              <div id="player1panel" class="panel-heading">
+                <h2>Player 1</h2>
+              </div>
+              <div class="panel-body">
+                <h3>Turn Score: </h3><span id="player1Tscore"></span>
+                <h3>Game Score: </h3><span id="player1Gscore"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <div id="player2panel" class="panel-heading">
+                <h2>Player 2</h2>
+              </div>
+              <div class="panel-body">
+                <h3>Turn Score: </h3><span id="player2Tscore"></span>
+                <h3>Game Score: </h3><span id="player2Gscore"></span>
+              </div>
+            </div>
+          </div>
 
     <div class="player-space container">
         <div class="row">
