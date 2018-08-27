@@ -12,3 +12,11 @@ function Player() {
   this.gameScore = gameScore;
   this.isActive = isActive;
 }
+
+var randomDie = randomNumber();
+
+function randomNumber() {
+    randomDie = Math.floor(6*Math.random())+1;
+
+    return randomDie;
+};
