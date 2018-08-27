@@ -26,3 +26,15 @@ var startGame = function() {
   player2 = new Player();
   player1.isActive = true;
 }
+
+var changePlayer = function() {
+  if (player1.isActive === true) {
+    player1.isActive = false;
+    player2.isActive = true;
+    turnScoreReset();
+  } else {
+    player2.isActive = false;
+    player1.isActive = true;
+    turnScoreReset();
+  }
+}
