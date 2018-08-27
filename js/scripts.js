@@ -108,7 +108,7 @@ $(document).ready(function() {
   stylePanels();
 
   $("button#roll").click(function(event) {
-    $(".dice").html('<img src=img/die'+ randomDie +'.png>');
+    $(".dice").html(randomDie);
     playerToRoll();
     stylePanels();
     var roundScore = roundScore + randomRoll();
